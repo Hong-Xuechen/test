@@ -14,7 +14,6 @@ question answering dataset is the SQuAD dataset, which is entirely based on that
 a model on a SQuAD task, you may leverage the examples/question-answering/run_squad.py script.
 """
 
-result = nlp(question=item.text, context=context)
 
 @app.get("/")
 def root():
@@ -22,4 +21,4 @@ def root():
 
 @app.put("/question_answering")
 def question-answering(item: Item):
-    return {"question_answering": result}
+    return {"question_answering": nlp(question=item.text, context=context)}
