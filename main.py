@@ -20,5 +20,5 @@ def root():
     return {"Hello": "World"}
 
 @app.put("/question_answering")
-def question-answering(item: Item):
+def question_answering(item: Item):
     return {"question_answering": nlp(question=item.text, context=context)}
