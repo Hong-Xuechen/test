@@ -6,12 +6,12 @@ class Item(BaseModel):
     text:str
         
 app = FastAPI()
-translator_en_to_zh = pipeline( "text-classification","bhadresh-savani/distilbert-base-uncased-emotion")
+classifier = pipeline("summarization","sshleifer/distilbart-xsum-12-1")
 
 @app.get("/")
 def root():
     return {"Hello": "World"}
 
-@app.put("/translator/")
+@app.put("/translator")
 def translator(item: Item):
-    return {"translator": translator_en_to_zh(item.text)}
+    return {"translator": classifier(item.text)}
