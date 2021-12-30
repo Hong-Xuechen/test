@@ -6,7 +6,7 @@ class Item(BaseModel):
     text:str
         
 app = FastAPI()
-classifier = pipeline("fill-mask","ckiplab/albert-tiny-chinese")
+classifier = pipeline("fill-mask","sentence-transformers/all-mpnet-base-v2")
 
 @app.get("/")
 def root():
