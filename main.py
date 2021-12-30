@@ -6,7 +6,7 @@ class Item(BaseModel):
     text:str
         
 app = FastAPI()
-nlp = pipeline("question-answering")
+nlp = pipeline("question_answering")
 
 context = r"""
 Extractive Question Answering is the task of extracting an answer from a text given a question. An example of a
@@ -20,6 +20,6 @@ result = nlp(question=item.text, context=context)
 def root():
     return {"Hello": "World"}
 
-@app.put("/question-answering")
+@app.put("/question_answering")
 def question-answering(item: Item):
-    return {"question-answering": result}
+    return {"question_answering": result}
