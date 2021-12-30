@@ -6,7 +6,7 @@ class Item(BaseModel):
     text:str
         
 app = FastAPI()
-nlp = pipeline("question_answering")
+nlp = pipeline("question_answering","distilbert-base-cased-distilled-squad")
 
 context = r"""
 Extractive Question Answering is the task of extracting an answer from a text given a question. An example of a
