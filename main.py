@@ -6,7 +6,7 @@ class Item(BaseModel):
     text:str
         
 app = FastAPI()
-classifier = pipeline("fill-mask")
+classifier = pipeline("question-answering")
 
 @app.get("/")
 def root():
